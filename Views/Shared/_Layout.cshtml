@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Azure Image Classifier</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Set Inter font as default */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="bg-indigo-700 shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold text-white tracking-wider" asp-area="" asp-controller="Home" asp-action="Index">
+                Azure AI Classifier
+            </a>
+            <div class="flex space-x-4">
+                <a class="text-white hover:text-indigo-200 transition duration-150 p-2 rounded-lg font-medium" asp-area="" asp-controller="Home" asp-action="Index">
+                    New Upload
+                </a>
+                <a class="text-white hover:text-indigo-200 transition duration-150 p-2 rounded-lg font-medium" asp-area="" asp-controller="Home" asp-action="History">
+                    History
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-t bg-white text-center py-4 text-sm text-gray-500 mt-auto">
+        &copy; 2025 - Image Classification Project - Cloud and Distributed Systems
+    </footer>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
